@@ -1,15 +1,14 @@
-# Version 1.0
+# Version 1.1
 # 2012 Doug Hogan
-# https://github.com/DigTheDoug
+# https://github.com/DigTheDoug/SyllableCounter
 
 # Based on/modified from Joe Basirico's JS code here:
 # http://stackoverflow.com/a/5615724/188221
+
 def CountSyllables(word, isName=True):
     vowels = "aeiouy"
-    specials = ["ia"]  #split as separate syllables
-    if isName:
-        #single syllables in words like bread and lead, but split in names like Breanne and Adreann
-        specials.extend("ea")
+    #single syllables in words like bread and lead, but split in names like Breanne and Adreann
+    specials = ["ia","ea"] if isName else ["ia"]
     specials_except_end = ["ie","ya","es","ed"]  #seperate syllables unless ending the word
     currentWord = word.lower()
     numVowels = 0
